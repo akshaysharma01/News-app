@@ -6,6 +6,8 @@ import RootNavigator from './src/navigation/index.navigation';
 
 import store, { persistor } from './src/store/index.store';
 
+import './src/firebaes/init.firebase';
+
 class App extends Component {
   render() {
     return (

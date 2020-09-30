@@ -75,7 +75,7 @@ function TabBar({ state, descriptors, navigation }) {
               style={styles.button}
             >
               {Icon && <Icon fill={isFocused ? "red" : "black"} width={(20)} height={(20)} />}
-              {isFocused ? <Text style={styles.title} >{title}</Text> : <Text style={styles.title} />}
+              <Text style={[styles.title, isFocused ? styles.red : null]} >{title}</Text>
             </TouchableOpacity>
           );
         })}
@@ -104,5 +104,8 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     fontSize: 9,
     lineHeight: 12,
+  },
+  red: {
+    backgroundColor: "red"
   }
 })
