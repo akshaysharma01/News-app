@@ -1,11 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
-function SplashScreen({ }) {
+function languageSelect({ }) {
   return (
     <View style={styles.container} >
-      <Text>Splash</Text>
-      <Text>sdjfnsdjfnjklsd</Text>
+      <Text>Language Select</Text>
     </View>
   )
 }
@@ -16,4 +15,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default SplashScreen;
+export default languageSelect;

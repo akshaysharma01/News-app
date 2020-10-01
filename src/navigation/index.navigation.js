@@ -11,6 +11,7 @@ import { navigationRef, isReadyRef } from '../services/navigation.service';
 //Screens 
 import LoginScene from '../scenes/loginScene/login.scene';
 import SplashScene from '../scenes/splashScene/splash.scene';
+import LanguageSelectScene from '../scenes/languageSelectScene/languageSelect.scene';
 
 import HomeScene from '../scenes/homeScene/home.scene';
 import TrendingScene from '../scenes/trendingScene/trending.scene';
@@ -70,6 +71,11 @@ function RootNavigator() {
           options={{ headerShown: false }}
           name="Splash"
           component={SplashScene}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="LanguageSelect"
+          component={LanguageSelectScene}
         />
         <Stack.Screen
           options={{ headerShown: false }}
