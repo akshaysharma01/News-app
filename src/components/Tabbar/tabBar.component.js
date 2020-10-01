@@ -4,6 +4,10 @@ import { View, TouchableOpacity, StyleSheet, Text, SafeAreaView } from 'react-na
 //constants
 
 //icons
+import HomeIcon from '../../assets/svg/home.icon';
+import TrendingIcon from '../../assets/svg/trending.icon';
+import SearchIcon from '../../assets/svg/search.icon';
+import ProfileIcon from '../../assets/svg/profile.icon';
 // import HomeIcon from '../../assets/svg/home-icon';
 // import OrdersIcon from '../../assets/svg/orders-icon';
 // import BagIcon from '../../assets/svg/bag-icon';
@@ -19,30 +23,29 @@ function TabBar({ state, descriptors, navigation }) {
   }
 
   return (
-    <SafeAreaView style={{ backgroundColor: "white" }} >
+    <SafeAreaView style={{ backgroundColor: "#6C63FF" }} >
       <View style={styles.container}>
         {state.routes.map((route, index) => {
           const { options } = descriptors[route.key];
 
           const isFocused = state.index === index;
           let Icon = null;
-          let title = null;
+          let title = route.name;
 
-          switch (route.name) {
+          switch (title) {
             case "Home":
-              title = "Home";
+              Icon = HomeIcon;
               break;
-            case "Categories":
-              title = "Categories";
+            case "Trending":
+              Icon = TrendingIcon;
               break;
-            case "Bag":
-              title = "Bag";
+            case "Search":
+              Icon = SearchIcon;
               break;
-            case "Orders":
-              title = "Orders";
+            case "Profile":
+              Icon = ProfileIcon;
               break;
           }
-
 
           const onPress = () => {
             const event = navigation.emit({
@@ -74,8 +77,9 @@ function TabBar({ state, descriptors, navigation }) {
               onLongPress={onLongPress}
               style={styles.button}
             >
-              {Icon && <Icon fill={isFocused ? "red" : "black"} width={(20)} height={(20)} />}
-              <Text style={[styles.title, isFocused ? styles.red : null]} >{title}</Text>
+              {Icon && <Icon fill={"white"} width={(20)} height={(20)} />}
+              <Text style={styles.title} >{title}</Text>
+              {isFocused ? <View style={styles.line} /> : null}
             </TouchableOpacity>
           );
         })}
@@ -90,9 +94,6 @@ const styles = StyleSheet.create({
   container: {
     height: 55,
     flexDirection: 'row',
-    // backgroundColor: Colors.white,
-    borderTopWidth: 1,
-    // borderTopColor: Colors.textLightGrey
   },
   button: {
     flex: 1,
@@ -100,12 +101,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   title: {
-    // color: Colors.primaryColor,
+    color: "#ffff",
     fontWeight: '500',
     fontSize: 9,
     lineHeight: 12,
+    marginTop: 5
   },
   red: {
     backgroundColor: "red"
+  },
+  line: {
+    width: 30,
+    height: 1,
+    borderTopWidth: 2,
+    borderColor: "#fff"
   }
 })

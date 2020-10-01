@@ -4,7 +4,7 @@ import { View, StyleSheet, Text } from 'react-native';
 function SplashScreen({ }) {
   return (
     <View style={styles.container} >
-      <Text>Hii</Text>
+      <Text>Splash</Text>
     </View>
   )
 }

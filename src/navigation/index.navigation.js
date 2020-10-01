@@ -10,7 +10,12 @@ import { navigationRef, isReadyRef } from '../services/navigation.service';
 
 //Screens 
 import LoginScene from '../scenes/loginScene/login.scene';
+import SplashScene from '../scenes/splashScene/splash.scene';
+
 import HomeScene from '../scenes/homeScene/home.scene';
+import TrendingScene from '../scenes/trendingScene/trending.scene';
+import SearchScene from '../scenes/searchScene/search.scene';
+import ProfileScene from '../scenes/profileScene/profile.scene';
 
 import Tabbar from '../components/Tabbar/tabBar.component';
 
@@ -29,17 +34,18 @@ function TabsNavigator() {
         name="Home"
         component={HomeScene}
       />
+
       <Tabs.Screen
-        name="Categories"
-        component={LoginScene}
+        name="Trending"
+        component={TrendingScene}
       />
       <Tabs.Screen
-        name="Bag"
-        component={LoginScene}
+        name="Search"
+        component={SearchScene}
       />
       <Tabs.Screen
-        name="Orders"
-        component={LoginScene}
+        name="Profile"
+        component={ProfileScene}
       />
     </Tabs.Navigator>
   )
@@ -58,17 +64,17 @@ function RootNavigator() {
       }}
     >
       <Stack.Navigator
-        initialRouteName="TabsNavigator"
+        initialRouteName="Splash"
       >
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Splash"
+          component={SplashScene}
+        />
         <Stack.Screen
           options={{ headerShown: false }}
           name="Tabs"
           component={TabsNavigator}
-        />
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="Login"
-          component={LoginScene}
         />
       </Stack.Navigator>
     </NavigationContainer>

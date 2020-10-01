@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import * as firebase from 'firebase';
 
-function Home() {
+function Trending() {
   useEffect(() => {
     // firebase.database().ref("users").set({
     //   name: "Hello"
@@ -12,9 +12,9 @@ function Home() {
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }} >
-      <Text>Home</Text>
+      <Text>Trending</Text>
     </View>
   )
 }
 
-export default Home;
+export default Trending;
