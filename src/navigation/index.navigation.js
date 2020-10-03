@@ -65,7 +65,7 @@ function RootNavigator() {
       }}
     >
       <Stack.Navigator
-        initialRouteName="Splash"
+        initialRouteName="SelectLanguage"
       >
         <Stack.Screen
           options={{ headerShown: false }}
@@ -74,7 +74,7 @@ function RootNavigator() {
         />
         <Stack.Screen
           options={{ headerShown: false }}
-          name="LanguageSelect"
+          name="SelectLanguage"
           component={LanguageSelectScene}
         />
         <Stack.Screen
