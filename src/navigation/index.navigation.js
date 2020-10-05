@@ -12,6 +12,7 @@ import { navigationRef, isReadyRef } from '../services/navigation.service';
 import LoginScene from '../scenes/loginScene/login.scene';
 import SplashScene from '../scenes/splashScene/splash.scene';
 import LanguageSelectScene from '../scenes/languageSelectScene/languageSelect.scene';
+import SelectCityScene from '../scenes/selectCityScene/selectCity.scene';
 
 import HomeScene from '../scenes/homeScene/home.scene';
 import TrendingScene from '../scenes/trendingScene/trending.scene';
@@ -65,7 +66,7 @@ function RootNavigator() {
       }}
     >
       <Stack.Navigator
-        initialRouteName="SelectLanguage"
+        initialRouteName="SelectCity"
       >
         <Stack.Screen
           options={{ headerShown: false }}
@@ -76,6 +77,11 @@ function RootNavigator() {
           options={{ headerShown: false }}
           name="SelectLanguage"
           component={LanguageSelectScene}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="SelectCity"
+          component={SelectCityScene}
         />
         <Stack.Screen
           options={{ headerShown: false }}

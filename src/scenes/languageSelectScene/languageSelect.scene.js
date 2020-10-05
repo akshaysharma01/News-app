@@ -1,19 +1,28 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet, Text, Image, Button, TouchableOpacity} from 'react-native';
 
 function languageSelect({ }) {
   return (
     <View style={styles.container} >
       
-      <view style={{flex:3, alignItems:"center", justifyContent:"center"}}>
+      <View style={{flex:3,  alignItems: "center", justifyContent: "center"}}>
         <Image source= {require('../../assets/png/language.png')} style ={styles.image} />
-      </view>
-      <view style={{flex:2.5, alignIteams: "center", justifyContent: "flex-end",paddingTop:40}}>
-        <Text style = {styles.selectText}>Select Your Language</Text>
-      </view>
-      <view style ={{flex:2,backgroundColor:'green'}}></view>
+      </View>
+      <View style={{flex:1.5,  alignItems: "center", justifyContent: "flex-end",paddingTop:20, marginLeft:20}}>
+        <Text style = {styles.selectText}>Select your language</Text>
+      </View>
+      <View style ={{flex:1.5, alignItems: "center", justifyContent: "flex-end",paddingBottom:25}}>
+        <TouchableOpacity style={{ borderRadius: 10, width: 244, height: 46, backgroundColor: "#6C63FF", alignItems: "center", justifyContent: "center" }} >
+          <Text style={{ fontSize: 24, color: "white" }} >English</Text>
+        </TouchableOpacity>
+      </View>
+      <View style = {{flex:1.5,alignItems: "center", justifyContent: "flex-start"}}>
+        <TouchableOpacity style={{ borderRadius: 10, width: 244, height: 46, backgroundColor: "#6C63FF", alignItems: "center", justifyContent: "center" }} >
+          <Text style={{ fontSize: 24, color: "white" }} >Hindi</Text>
+        </TouchableOpacity>
+      </View>
       
-      <view style = {{flex:0.5,backgroundColor:'grey'}}></view>
+      <View style = {{flex:1}}></View>
 
       
      
@@ -28,20 +37,16 @@ const styles = StyleSheet.create({
   image: {
     width:297,
     height:214,
-    top:20
-    
-    
+    top:40  
   },
-  selecttext: {
-    fontSize:40,
-    
-    left:500,
-    width:297,
-    height:33,
-    top:20
-    
+  selectText: {
+    fontSize:24,
+    width: 255,
+    height: 29,
+    lineHeight:33,
+    color: "#242424"
+  },
 
-  }
 })
 
 export default languageSelect;
