@@ -13,6 +13,7 @@ import LoginScene from '../scenes/loginScene/login.scene';
 import SplashScene from '../scenes/splashScene/splash.scene';
 import LanguageSelectScene from '../scenes/languageSelectScene/languageSelect.scene';
 import SelectCityScene from '../scenes/selectCityScene/selectCity.scene';
+import SelectStateScene from '../scenes/selectStateScene/selectState.scene';
 
 import HomeScene from '../scenes/homeScene/home.scene';
 import TrendingScene from '../scenes/trendingScene/trending.scene';
@@ -66,7 +67,7 @@ function RootNavigator() {
       }}
     >
       <Stack.Navigator
-        initialRouteName="SelectCity"
+        initialRouteName="SelectState"
       >
         <Stack.Screen
           options={{ headerShown: false }}
@@ -82,6 +83,11 @@ function RootNavigator() {
           options={{ headerShown: false }}
           name="SelectCity"
           component={SelectCityScene}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="SelectState"
+          component={SelectStateScene}
         />
         <Stack.Screen
           options={{ headerShown: false }}
