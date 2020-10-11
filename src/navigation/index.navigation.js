@@ -14,6 +14,8 @@ import SplashScene from '../scenes/splashScene/splash.scene';
 import LanguageSelectScene from '../scenes/languageSelectScene/languageSelect.scene';
 import SelectCityScene from '../scenes/selectCityScene/selectCity.scene';
 import SelectStateScene from '../scenes/selectStateScene/selectState.scene';
+import SelectDistrictScene from '../scenes/selectdistrictscene/selectdistrict.scene';
+import SelectTehsilScene from '../scenes/SelectTehsilScene/SelectTehsil.scene';
 
 import HomeScene from '../scenes/homeScene/home.scene';
 import TrendingScene from '../scenes/trendingScene/trending.scene';
@@ -67,7 +69,7 @@ function RootNavigator() {
       }}
     >
       <Stack.Navigator
-        initialRouteName="SelectState"
+        initialRouteName="SelectTehsil"
       >
         <Stack.Screen
           options={{ headerShown: false }}
@@ -88,6 +90,16 @@ function RootNavigator() {
           options={{ headerShown: false }}
           name="SelectState"
           component={SelectStateScene}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="SelectDistrict"
+          component={SelectDistrictScene}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="SelectTehsil"
+          component={SelectTehsilScene}
         />
         <Stack.Screen
           options={{ headerShown: false }}
