@@ -1,9 +1,24 @@
-import React from 'react';
-import { View, StyleSheet, Text, Image, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import firebase from 'firebase';
+import { navigate } from '../../services/navigation.service';
 
 function SelectState({ }) {
+  const [stateNames, setStateNames] = useState([]);
 
-  const states = ["Rajasthan", "Utter Pradesh", "Karnataka", "Utter Pradesh", "Karnataka", "Utter Pradesh", "Karnataka", "Utter Pradesh", "Karnataka", "Utter Pradesh", "Karnataka", "Utter Pradesh", "Karnataka"];
+  useEffect(() => {
+    fetchState();
+  }, [])
+
+  function fetchState() {
+    firebase.firestore().collection("locations").get().then((snapshot) => {
+      const states = [];
+      snapshot.docs.forEach((doc) => {
+        states.push(doc.data());
+      })
+      setStateNames(states);
+    })
+  }
 
   return (
     <View style={styles.container} >
@@ -17,16 +32,20 @@ function SelectState({ }) {
       </View>
       <ScrollView style={{ flex: 1, marginTop: 50 }} >
         {
-          states.map((item) => {
+          stateNames.map((item) => {
             return (
-              <View style={{ height: 50, flexDirection: "row" }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigate("SelectDistrict", { stateName: item, abc: "123" })
+                }}
+                style={{ height: 50, flexDirection: "row" }}>
                 <View style={{ flex: 0.1, alignItems: "center", justifyContent: "center" }}>
                   <Image source={require('../../assets/png/map.png')} style={styles.mapimage} />
                 </View>
                 <View style={{ flex: 0.9, alignItems: "flex-start", justifyContent: "center" }}>
                   <Text style={styles.statename}> {item} </Text>
                 </View>
-              </View>
+              </TouchableOpacity>
             )
           }
           )
@@ -61,8 +80,6 @@ const styles = StyleSheet.create({
   },
   statename: {
     fontSize: 20,
-    width: 130,
-    height: 27,
     fontStyle: "normal",
     fontWeight: 400,
     top: 30,

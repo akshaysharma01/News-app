@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
+import { navigate } from '../../services/navigation.service';
 
 function SplashScreen({ }) {
+
+  useEffect(() => {
+    // code will run after render
+    setTimeout(() => {
+      navigate("SelectLanguage");
+    }, 3000);
+  }, []);
+
   return (
     <View style={styles.container} >
       <View style={{ flex: 2, alignItems: "center", justifyContent: "flex-end" }} >
@@ -13,7 +22,7 @@ function SplashScreen({ }) {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }} >
         <Text style={styles.smallText} >Get Daily Latest News</Text>
       </View>
-      <View style={{ flex: 3, alignItems:"center", justifyContent: "flex-end", paddingBottom: 14 }} >
+      <View style={{ flex: 3, alignItems: "center", justifyContent: "flex-end", paddingBottom: 14 }} >
         <Text style={styles.versionText} >v1.0.0</Text>
       </View>
     </View>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image, ScrollView } from 'react-native';
 
-function SelectDistrict({ }) {
-
-  const states = ["Jalore","Sirohi","Pali","Jodhpur","Barmer","Bikaner","Jaipur","Jhalawar","Kota","Bharatpur"];
+function SelectDistrict({ route }) {
+  const { stateName, abc } = route.params;
+  console.log("stateName",stateName)
+  const states = ["Jalore", "Sirohi", "Pali", "Jodhpur", "Barmer", "Bikaner", "Jaipur", "Jhalawar", "Kota", "Bharatpur"];
 
   return (
     <View style={styles.container} >

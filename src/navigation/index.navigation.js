@@ -70,7 +70,7 @@ function RootNavigator() {
       }}
     >
       <Stack.Navigator
-        initialRouteName="LogPage"
+        initialRouteName="SelectState"
       >
         <Stack.Screen
           options={{ headerShown: false }}
