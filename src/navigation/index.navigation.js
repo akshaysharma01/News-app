@@ -16,6 +16,7 @@ import SelectCityScene from '../scenes/selectCityScene/selectCity.scene';
 import SelectStateScene from '../scenes/selectStateScene/selectState.scene';
 import SelectDistrictScene from '../scenes/selectdistrictscene/selectdistrict.scene';
 import SelectTehsilScene from '../scenes/SelectTehsilScene/SelectTehsil.scene';
+import LogPageScene from '../scenes/LogPageScene/LogPage.scene';
 
 import HomeScene from '../scenes/homeScene/home.scene';
 import TrendingScene from '../scenes/trendingScene/trending.scene';
@@ -69,7 +70,7 @@ function RootNavigator() {
       }}
     >
       <Stack.Navigator
-        initialRouteName="SelectTehsil"
+        initialRouteName="LogPage"
       >
         <Stack.Screen
           options={{ headerShown: false }}
@@ -100,6 +101,11 @@ function RootNavigator() {
           options={{ headerShown: false }}
           name="SelectTehsil"
           component={SelectTehsilScene}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="LogPage"
+          component={LogPageScene}
         />
         <Stack.Screen
           options={{ headerShown: false }}
