@@ -14,11 +14,13 @@ function SelectState({ }) {
     firebase.firestore().collection("locations").get().then((snapshot) => {
       const states = [];
       snapshot.docs.forEach((doc) => {
-        states.push(doc.data());
+        states.push(doc.data().state);
       })
       setStateNames(states);
     })
   }
+
+  
 
   return (
     <View style={styles.container} >

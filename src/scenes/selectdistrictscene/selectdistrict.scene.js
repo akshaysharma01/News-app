@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image, ScrollView } from 'react-native';
+import { View, StyleSheet, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { navigate } from '../../services/navigation.service';
 
 function SelectDistrict({ route }) {
   const { stateName, abc } = route.params;
@@ -20,14 +21,20 @@ function SelectDistrict({ route }) {
         {
           states.map((item) => {
             return (
-              <View style={{ height: 50, flexDirection: "row" }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigate("LogPage", { stateName: item, abc: "123" })
+                }}
+                style={{ height: 50, flexDirection: "row" }}>
+                
                 <View style={{ flex: 0.1, alignItems: "center", justifyContent: "center" }}>
                   <Image source={require('../../assets/png/map.png')} style={styles.mapimage} />
                 </View>
                 <View style={{ flex: 0.9, alignItems: "flex-start", justifyContent: "center" }}>
                   <Text style={styles.statename}> {item} </Text>
+                
                 </View>
-              </View>
+              </TouchableOpacity>
             )
           }
           )

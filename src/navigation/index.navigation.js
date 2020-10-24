@@ -70,7 +70,7 @@ function RootNavigator() {
       }}
     >
       <Stack.Navigator
-        initialRouteName="SelectState"
+        initialRouteName="Splash"
       >
         <Stack.Screen
           options={{ headerShown: false }}
